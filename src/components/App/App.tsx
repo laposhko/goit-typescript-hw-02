@@ -70,7 +70,7 @@ const App: FC = () => {
         />
       )}
       <Toaster />
-      {loader && <Loader />}
+      {loader && <Loader isLoading={loader} />}
       {error && <ErrorMessage />}
       {showBtn && <LoadMoreBtn onClick={loadMore} />}
     </div>

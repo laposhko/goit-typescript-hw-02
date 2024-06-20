@@ -1,6 +1,10 @@
 import { Circles } from "react-loader-spinner";
 import css from "./Loader.module.css";
-export default function Loader() {
+import { FC } from "react";
+interface Props {
+  isLoading: boolean;
+}
+const Loader: FC<Props> = ({ isLoading }) => {
   return (
     <div className={css.loader}>
       <Circles
@@ -10,8 +14,10 @@ export default function Loader() {
         ariaLabel="circles-loading"
         wrapperStyle={{}}
         wrapperClass=""
-        visible={true}
+        visible={isLoading}
       />
     </div>
   );
-}
+};
+
+export default Loader;
